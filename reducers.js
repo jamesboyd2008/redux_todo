@@ -1,10 +1,6 @@
 
 import { VisibilityFilters } from './actions'
-
-const initialState = {
-  visibilityFilter: VisibilityFilters.SHOW_ALL,
-  todos: []
-}
+const { SHOW_ALL } = VisibilityFilters;
 
 let todos = (state = [], action) => {
   swtich (action.type) {
@@ -30,19 +26,18 @@ let todos = (state = [], action) => {
   }
 }
 
-let todoApp(state = initialState, action) {
+let visibilityFilter = (state = SHOW_ALL, ation) => {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
-      return Object.assign({}, state, {
-        visibilityFilter: action.filter
-      })
-    case ADD_TODO:
-    case TOGGLE_TODO:
-      return Object.assign({}, state, {
-        todos: todos(state.todos, action)
-      })
+      return action.filter
     default:
       return state
   }
-  return state
+}
+
+let todoApp = (state = {}, action) => {
+  return {
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+    todos: todos(state.todos, action)
+  }
 }
