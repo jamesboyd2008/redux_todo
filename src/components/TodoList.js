@@ -32,7 +32,7 @@ TodoList.propTypes = {
     completed: React.PropTypes.bool.isRequired,
     text: React.PropTypes.string.isRequired
   }).isRequired).isRequired,
-  onTodoClick: React.Proptypes.func.isRequired
+  onTodoClick: React.PropTypes.func.isRequired
 }
 
 export default TodoList
