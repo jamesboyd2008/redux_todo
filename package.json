@@ -4,8 +4,10 @@
   "description": "This is a todo app for familiarizing oneself with redux.  It's straight out of the docs: http://redux.js.org/docs/basics/ExampleTodoList.html",
   "main": "index.js",
   "scripts": {
-    "build": "babel index.js --out-file bundle.js --source-maps",
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "eject": "react-scripts eject",
+      "test": "react-scripts test"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   "dependencies": {
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
+    "react-scripts": "^0.8.5",
     "redux": "^3.6.0"
   }
 }
